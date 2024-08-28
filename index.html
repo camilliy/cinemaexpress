@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinemaExpress</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>CinemaExpress</h1>
+            <div class="menu-hamburguer" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+    
+
+    <nav id="hamburger-menu" class="hidden">
+        <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#new-releases">Lançamentos</a></li>
+            <li><a href="#top-sellers">Mais Vendidos</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+
+    <nav id="main-menu">
+        <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#new-releases">Lançamentos</a></li>
+            <li><a href="#top-sellers">Mais Vendidos</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section id="home">
+            <h2>Bem-vindo à CinemaExpress</h2>
+            <p>
+                Descubra o prazer de assistir aos melhores filmes sem sair de casa. Em CinemaExpress, oferecemos uma vasta seleção de lançamentos recentes, clássicos imperdíveis e os grandes sucessos de bilheteira. Navegue por nossas categorias, encontre as suas obras favoritas e aproveite ofertas especiais que fazem do cinema uma experiência acessível e emocionante. Prepare a pipoca e entre no mundo do entretenimento com apenas alguns cliques!
+            </p>
+        </section>
+
+        <section id="new-releases">
+            <h2>Lançamentos</h2>
+            <div class="film-list">
+                <article class="film-item">
+                    <img src="download (4).jpg" alt="Filme 1">
+                    <h3>Meu Malvado Favorito 4</h3>
+                    <p>O vilão mais amado do planeta, que virou agente da Liga Antivilões, retorna para mais uma aventura em Meu Malvado Favorito 4...</p>
+                    <p class="price">R$ 59,99</p>
+                    <button onclick="addToCart('Meu Malvado Favorito 4', 29.99)">Comprar</button>
+                </article>
+                <article class="film-item">
+                    <img src="download (8).jpg" alt="Filme 2">
+                    <h3>Divertidamente 2</h3>
+                    <p>Divertidamente 2 marca a sequência da famosa história de Riley. Com um salto temporal, a garota agora se encontra mais velha...</p>
+                    <p class="price">R$ 59,99</p>
+                    <button onclick="addToCart('Divertidamente 2', 39.99)">Comprar</button>
+                </article>
+                <!-- Adicione mais filmes conforme necessário -->
+            </div>
+        </section>
+
+        <section id="top-sellers">
+            <h2>Mais Vendidos</h2>
+            <div class="film-list">
+                <article class="film-item">
+                    <img src="download (5).jpg" alt="Filme 3">
+                    <h3>Bad Boys</h3>
+                    <p>Bad Boys: Até o Fim é o quarto filme da icônica saga de ação estrelada por Will Smith e Martin Lawrence...</p>
+                    <p class="price">R$ 24,99</p>
+                    <button onclick="addToCart('Bad Boys', 24.99)">Comprar</button>
+                </article>
+                <article class="film-item">
+                    <img src="download (7).jpg" alt="Filme 4">
+                    <h3>Velozes e Furiosos 9</h3>
+                    <p>Em Velozes & Furiosos 9, dois anos após o confronto com a ciber-terrorista Cipher, Dominic Toretto e Letty vivem uma vida pacata...</p>
+                    <p class="price">R$ 34,99</p>
+                    <button onclick="addToCart('Velozes e Furiosos 9', 34.99)">Comprar</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contato</h2>
+            <form id="contact-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 CinemaExpress - Alunos: João, Maria, Ana</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('hamburger-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function addToCart(filmTitle, filmPrice) {
+            alert(`Você adicionou "${filmTitle}" ao carrinho por R$ ${filmPrice.toFixed(2)}.`);
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Sua mensagem foi enviada com sucesso!');
+            // Aqui você pode adicionar lógica para enviar o formulário para um servidor ou serviço de e-mail
+            this.reset(); // Limpa o formulário após o envio
+        });
+    </script>
+</body>
+</html>
